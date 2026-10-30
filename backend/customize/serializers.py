@@ -1,0 +1,18 @@
+
+from rest_framework import serializers
+from .models import SiteSetting
+
+
+class SiteSettingSerializer(serializers.ModelSerializer):
+    delivery_fee = serializers.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        min_value=0
+    )
+
+    class Meta:
+        model = SiteSetting
+        fields = ["delivery_fee"]
+
+
+
